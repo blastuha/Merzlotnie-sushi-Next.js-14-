@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Merzlotnie Sushi
 
-## Getting Started
+[https://merzlotnie-sushi-next-js-14.vercel.app/](https://merzlotnie-sushi-next-js-14.vercel.app/)
 
-First, run the development server:
+## Запуск проекта
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+First, clone repo:
+
+`git clone https://github.com/blastuha/Merzlotnie-sushi-Next.js-14-.git`
+
+Go to the folder, install dependencies and run the development server:
+
+```
+$ npm install
+
+$ npm run dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Стек технологий:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- TypeScript
+- React
+- Next.js 14+ (UseApp Router)
+- Tailwind
+- React.Context
+- Библиотеки для работы с mockapi не использовались (fetch, async await)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Архитектура проекта:
 
-## Learn More
+- Основное содержимое страниц находится в папке (main)
+- page.tsx в (main) - главная страница приложения
+- папка categories отвечает за отдельный route, который направляет на еду конкретной категории
+- папка products отвечает за отдельный rout, который позволяет попасть на конкретный продукт
+- папка components - это ui компоненты
+- папка hooks содержиткастомные хуки
+- папка context отвечает за глобальные состояния
+- папка actions содержит запросы к серверу
+- папки types и contasts содержат типы и переменные
 
-To learn more about Next.js, take a look at the following resources:
+## Реализованный функционал:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Работа с запросами к серверу**: Реализовано взаимодействие с сервером (mockapi) с помощью инкрементальной статической регенерации (ISR), где запросы регенерируются с периодической проверкой каждые 60 секунд.
+- **Фильтрация в Header**: Реализован функционал фильтрации по категориям внутри шапки страницы
+- **Сортировка**: Реализована возможность сортировать продукты по: цене, популярности, названию
+- **Адаптивная версткая**: Реализована адаптация по все разрешения экранов
+- **Отображение активной категории**: Реализован функционал отображения активной категории (синяя полоска в шапке)
+- **SEO оптимизация**: Добавлена seo-оптимизация
+- **Добавление в избранное**: Добавление рецепта в избранное и его хранение в базе Firebase.
